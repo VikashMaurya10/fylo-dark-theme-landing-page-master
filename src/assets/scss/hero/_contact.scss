@@ -1,0 +1,141 @@
+.contect {
+    min-width: 50%;
+    position: relative;
+
+    &::before {
+        position: absolute;
+        content: '';
+        height: 50%;
+        width: 100%;
+        background-color: $bg_main;
+        z-index: -1;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        height: 50%;
+        width: 100%;
+        background-color: $bg_footer;
+        z-index: -1;
+        bottom: 0;
+    }
+
+    &__inner {
+        max-width: 65%;
+        margin: 0 auto;
+        background-color: $bg_intro;
+        border-radius: rem(10);
+        box-shadow: 0 0 10px 0 hsl(218, 28%, 13%);
+
+        @include maximum(laptop) {
+            max-width: 80%;
+        }
+
+        >div {
+            margin: 0 auto;
+            max-width: 75%;
+            min-height: rem(350);
+            gap: rem(16);
+            text-align: center;
+
+            @include maximum(laptop) {
+                max-width: 80%;
+            }
+
+            @include maximum(tablet) {
+                max-width: 90%;
+            }
+
+
+            h4 {
+                font-size: rem(32);
+
+                @include maximum(mobile) {
+                    font-size: rem(25);
+                }
+            }
+
+            p {
+                @include maximum(tablet) {
+                    font-size: rem(14);
+                }
+
+                @include maximum(mobile) {
+                    font-size: rem(12);
+                }
+            }
+
+            .searchBox {
+                width: 90%;
+                gap: 1rem;
+                position: relative;
+
+                @include maximum(tablet) {
+                    flex-direction: column;
+                    gap: 1.5rem;
+                }
+
+                input {
+                    width: 65%;
+                    padding: 1rem 1.5rem;
+                    border-radius: rem(30);
+                    font-size: rem(14);
+                    font-weight: $Regular;
+
+                    @include maximum(laptop) {
+                        width: 70%;
+                        padding: 0.8rem 1.2rem;
+
+                    }
+
+                    @include maximum(mobile) {
+                        width: 100%;
+                        font-size: rem(14);
+                    }
+                }
+
+                span {
+                    min-width: fit-content;
+
+                    .button {
+                        padding: 1rem 2rem;
+
+                        @include maximum(mobile) {
+                            width: 100%;
+                        }
+                    }
+
+                    @include maximum(mobile) {
+                        width: 100%;
+                        font-size: rem(14);
+                    }
+                }
+
+                .error {
+                    position: absolute;
+                    color: red;
+                    text-align: left !important;
+                    top: rem(52);
+                    font-size: rem(10);
+                    left: rem(20);
+                    display: none;
+
+                    @include maximum(tablet) {
+                        left: 20%;
+                    }
+
+                    @include maximum(mobile) {
+                        left: rem(20);
+                    }
+
+                }
+
+                .hide-error {
+                    display: block;
+                }
+            }
+        }
+    }
+
+}

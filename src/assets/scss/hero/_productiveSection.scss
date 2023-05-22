@@ -1,0 +1,90 @@
+.productiveSection {
+    background-color: $bg_main;
+    padding-top: rem(70);
+
+
+    .productive {
+        gap: rem(64);
+
+        @include maximum(laptop) {
+            flex-direction: column;
+            gap: rem(32);
+
+        }
+
+        &__img {
+            background: no-repeat center/contain url('/src/assets/images/illustration-stay-productive.png');
+            height: 500px;
+            min-width: 50%;
+
+            @include maximum(laptop) {
+                width: 80%;
+                height: 350px;
+            }
+
+            @include maximum(mobile) {
+                width: 100%;
+                height: 250px;
+            }
+        }
+
+        &__content {
+            max-width: 50%;
+
+            @include maximum(L-laptop) {
+                max-width: 80%;
+            }
+
+            @include maximum(laptop) {
+                text-align: center;
+            }
+
+            @include maximum(mobile) {
+                text-align: left;
+                max-width: 100%;
+            }
+
+            h3,
+            p {
+                max-width: 75%;
+
+                @include maximum(laptop) {
+                    max-width: 100%;
+                }
+
+            }
+
+            h3 {
+                font-size: $fs-lg;
+
+                @include maximum(laptop) {
+                    font-size: rem(25);
+                }
+
+                @include maximum(mobile) {
+                    font-size: rem(20);
+                }
+            }
+
+            a {
+                color: $Cyan;
+                gap: rem(5);
+                max-width: fit-content;
+                transition: color 0.3s ease-in-out;
+
+                svg {
+                    color: #62E0D9;
+                }
+
+                &:hover {
+                    color: $White;
+
+                    svg {
+                        color: $White;
+                    }
+                }
+            }
+
+        }
+    }
+}

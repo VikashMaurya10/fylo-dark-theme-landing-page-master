@@ -1,0 +1,30 @@
+@function rem($value) {
+  @return calc($value / 16)+rem;
+}
+
+//breakpoints
+// 640px, 1024px, 1400px
+$breakpoints-max: (
+  "mobile": "40em",
+  "tablet": "48em",
+  "laptop": "64em",
+  "L-laptop": "87.5em",
+);
+//639px, 1023px, 1399px
+$breakpoints-min: (
+  "tablet": "39.9375em",
+  "laptop": "63.9375em",
+  "L-laptop": "87.4375em",
+);
+
+@mixin minimum($size) {
+  @media (min-width: map-get($breakpoints-min, $size)) {
+    @content;
+  }
+}
+
+@mixin maximum($size) {
+  @media (max-width: map-get($breakpoints-max, $size)) {
+    @content;
+  }
+}

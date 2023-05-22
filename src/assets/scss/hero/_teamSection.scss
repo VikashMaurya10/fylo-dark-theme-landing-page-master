@@ -1,0 +1,74 @@
+.teamSection {
+    background-color: $bg_main;
+    padding: rem(112) 0;
+
+    .setWidth {
+        @include maximum(mobile) {
+            width: 80%;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            place-items: center;
+            gap: rem(32);
+
+            @include maximum(mobile) {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                background-color: $bg_testimonials;
+                padding: rem(48) rem(32);
+                border-radius: rem(10);
+
+                @include maximum(mobile) {
+                    padding: rem(32) rem(16);
+                }
+
+                p {
+                    margin-bottom: rem(16);
+                }
+
+                div {
+                    img {
+                        width: rem(50);
+                        border-radius: 50%;
+
+                        @include maximum(mobile) {
+                            width: rem(40)
+                        }
+                    }
+
+                    div {
+                        margin-left: rem(16);
+
+                        h4 {
+                            font-size: $fs-sm;
+                        }
+
+                        span {
+                            color: $grayish;
+                            font-size: rem(12);
+                        }
+                    }
+                }
+            }
+
+            .first_card {
+                position: relative;
+                z-index: 1;
+
+                &::before {
+                    position: absolute;
+                    top: rem(-32);
+                    left: rem(-16);
+                    content: url('/src/assets/images/bg-quotes.png');
+                    z-index: -1;
+                }
+
+            }
+
+        }
+    }
+}

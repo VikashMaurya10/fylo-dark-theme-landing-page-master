@@ -1,0 +1,40 @@
+header {
+    background-color: $bg_intro;
+    padding: rem(32) 0;
+
+    .innerHeader {
+        img {
+            @include maximum(mobile) {
+                width: 30%;
+            }
+        }
+
+        .links {
+            .link {
+                color: $grayish;
+                font-weight: $Regular;
+                text-decoration: none;
+                font-size: $fs-md;
+                transition: all 0.3s ease-in-out;
+
+                &:not(:last-child) {
+                    padding-right: rem(16);
+                }
+
+                &:hover {
+                    color: $White;
+                    font-weight: $bold;
+                }
+
+                @include maximum(mobile) {
+                    font-size: $fs-sm;
+                }
+            }
+
+            .active {
+                color: $White;
+                font-weight: $bold;
+            }
+        }
+    }
+}

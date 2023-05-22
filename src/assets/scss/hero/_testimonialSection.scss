@@ -1,0 +1,32 @@
+.testmonialSection {
+    background-color: $bg_main;
+    padding-top: rem(48);
+
+    .testmonials {
+        max-width: 60%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: rem(70);
+
+        @media (max-width: 1455px) {
+            max-width: 80%;
+        }
+
+        @include maximum(mobile) {
+            max-width: 100%;
+        }
+
+        .testmonial {
+            text-align: center;
+
+            h2 {
+                margin-top: rem(16);
+            }
+
+            p {
+                margin-top: rem(10);
+            }
+        }
+    }
+}

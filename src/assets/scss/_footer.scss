@@ -1,0 +1,150 @@
+footer {
+    padding: rem(64) 0 0 0;
+    background-color: $bg_footer;
+
+    .logo {
+        @include maximum(tablet) {
+            width: 140px;
+        }
+
+        @include maximum(mobile) {
+            width: 100px;
+        }
+    }
+
+    .innerFooter {
+        padding-bottom: rem(64);
+        &__content {
+            gap: rem(48);
+            margin-top: rem(32);
+
+            @include maximum(mobile) {
+                flex-direction: column;
+            }
+
+            &__left {
+                max-width: 50%;
+                gap: rem(64);
+
+                @include maximum(laptop) {
+                    flex-direction: column;
+                    gap: rem(16);
+                }
+
+                @include maximum(mobile) {
+                    max-width: 100%;
+                }
+
+                .location {
+                    align-items: start;
+                    max-width: 50%;
+
+                    @include maximum(laptop) {
+                        max-width: 100%;
+                    }
+                }
+
+                .call {
+                    align-items: start;
+                }
+            }
+
+            &__right {
+                width: 50%;
+
+                @include maximum(laptop) {
+                    flex-direction: column;
+                }
+
+                @include maximum(mobile) {
+                    width: 100%;
+                }
+
+                .links {
+                    width: 50%;
+
+                    @include maximum(laptop) {
+                        width: 100%;
+                    }
+
+                    @include maximum(mobile) {
+                        flex-direction: column;
+                    }
+
+                    .link {
+                        max-width: fit-content;
+                        display: block;
+                        color: $White;
+                        font-weight: $Regular;
+                        transition: font-weight 0.3s ease-in-out;
+                        text-decoration: none;
+
+                        &:not(:first-child) {
+                            margin-top: 1rem;
+                        }
+
+                        &:hover {
+                            font-weight: $bold;
+                        }
+                    }
+                }
+
+                .share_icon {
+                    width: 50%;
+                    align-items: start;
+                    justify-content: flex-end;
+                    gap: 0.8rem;
+
+                    @include maximum(laptop) {
+                        width: 100%;
+                        justify-content: start;
+                    }
+
+                    @include maximum(mobile) {
+                        width: 100%;
+                        justify-content: center;
+                    }
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 2.5rem;
+                        aspect-ratio: 1/1;
+                        color: $White;
+                        border: 2px solid $White;
+                        border-radius: 50%;
+                        font-size: rem(22);
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $Cyan;
+                            border: 2px solid $Cyan;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    .attribution {
+        margin: 0 auto;
+        padding: 0.5rem 1rem;
+        background: $bg_testimonials;
+        border-radius: 10px 10px 0 0;
+        font-weight: $Regular;
+        font-size: $fs-sm;
+        max-width: fit-content;
+        text-align: center;
+
+        a {
+            color: $Blue;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+                color: $Cyan;
+            }
+        }
+    }
+}
